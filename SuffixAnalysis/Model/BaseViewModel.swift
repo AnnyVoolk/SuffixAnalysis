@@ -25,8 +25,8 @@ class BaseViewModel: ObservableObject {
             strongify.setSuffixArray(wordSequence: wordSequence)
         }
         self.suffixArray = self.suffixArray.sorted(by: { $0.title < $1.title })
-        self.top3SuffixArray = Array(self.suffixArray.filter { $0.title.count == 3 }.prefix(10))
-        self.top5SuffixArray = Array(self.suffixArray.filter { $0.title.count == 5 }.prefix(10))
+        self.top3SuffixArray = Array(self.suffixArray.filter { $0.title.count == 3 }.sorted(by: { $0.count > $01.count }).prefix(10))
+        self.top5SuffixArray = Array(self.suffixArray.filter { $0.title.count == 5 }.sorted(by: { $0.count > $01.count }).prefix(10))
     }
     
     func setSuffixArray(wordSequence: SuffixSequence) {
@@ -43,13 +43,5 @@ class BaseViewModel: ObservableObject {
     
     func sortSuffixArray(isAsc: Bool) {
         self.suffixArray = self.suffixArray.sorted(by: { isAsc ? $0.title < $1.title : $0.title > $1.title })
-    }
-    
-    func sortTop3SuffixArray(isAsc: Bool) {
-        self.top3SuffixArray = self.top3SuffixArray.sorted(by: { isAsc ? $0.title < $1.title : $0.title > $1.title })
-    }
-    
-    func sortTop5SuffixArray(isAsc: Bool) {
-        self.top5SuffixArray = self.top5SuffixArray.sorted(by: { isAsc ? $0.title < $1.title : $0.title > $1.title })
     }
 }

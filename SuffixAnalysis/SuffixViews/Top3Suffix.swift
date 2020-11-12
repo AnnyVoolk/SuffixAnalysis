@@ -14,10 +14,6 @@ struct Top3Suffix: View {
     
     var body: some View {
         VStack {
-            SortButtons(
-                ascSorting: ({ self.model.sortTop3SuffixArray(isAsc: true) }),
-                descSoritng: ({ self.model.sortTop3SuffixArray(isAsc: false) })
-            )
             SuffixList(values: model.top3SuffixArray)
         }
     }

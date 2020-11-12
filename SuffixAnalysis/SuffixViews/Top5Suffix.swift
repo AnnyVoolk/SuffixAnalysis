@@ -14,10 +14,6 @@ struct Top5Suffix: View {
     
     var body: some View {
         VStack {
-           SortButtons(
-                ascSorting: ({ self.model.sortTop5SuffixArray(isAsc: true) }),
-                descSoritng: ({ self.model.sortTop5SuffixArray(isAsc: false) })
-            )
             SuffixList(values: model.top5SuffixArray)
         }
     }
