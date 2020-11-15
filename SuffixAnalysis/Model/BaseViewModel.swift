@@ -18,7 +18,7 @@ class BaseViewModel: ObservableObject {
     init() {
         let defaults = UserDefaults(suiteName: "group.Anna-Volkova.SuffixAnalysis")
         defaults?.synchronize()
-        let textString = defaults?.string(forKey: "text") ?? ""
+        let textString = defaults?.string(forKey: "text") ?? "Test first name, test first surname"
         let wordsSuffixArray = textString.words.map { SuffixSequence(string: String($0)) }
         wordsSuffixArray.forEach { [weak self] wordSequence in
             guard let strongify = self else { return }
