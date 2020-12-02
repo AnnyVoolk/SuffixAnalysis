@@ -18,7 +18,7 @@ struct AllSuffixView: View {
                 ascSorting: ({ self.model.sortSuffixArray(isAsc: true) }),
                 descSoritng: ({ self.model.sortSuffixArray(isAsc: false) })
             )
-            SuffixList(values: model.suffixArray)
+            SuffixList(values: self.model.suffixArray)
         }
     }
 }

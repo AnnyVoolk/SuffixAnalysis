@@ -15,3 +15,5 @@ struct SuffixSequence: Sequence{
         return SuffixInteractor(string: self.string)
     }
 }
+
+extension SuffixSequence: Equatable {}
